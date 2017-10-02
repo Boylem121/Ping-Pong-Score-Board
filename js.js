@@ -23,7 +23,7 @@
      $('#score-p1').html(function(i, val) {
        p1 = val * 1 + 1
        if (p1 >= winningScore && p1 >= p2 + 2) {
-         $('#place-name-p1').html('<h1> ' + namep1 + ' win</h1>');
+         $('#place-name-p1').html('<h1> ' + namep1 + ' wins!</h1>');
        }
        return p1
      });
@@ -33,7 +33,7 @@
      $('#score-p2').html(function(i, val) {
        p2 = val * 1 + 1
        if (p2 >= winningScore && p2 >= p1 + 2) {
-         $('#place-name-p2').html('<h1> ' + namep2 + ' win</h1>');
+         $('#place-name-p2').html('<h1> ' + namep2 + ' wins!</h1>');
        }
        return p2
      });
@@ -54,10 +54,20 @@
    });
 
    $('.score-change').click(function() {
-     if (((Math.floor((p1 + p2) / 5)) % 2) == 1 || p1 == winningScore - 1) {
+     if ((p1 == winningScore - 1 && p1!=p2 && p2 != winningScore - 1 && p1>p2) || (p1 >= winningScore - 1 && p1>p2)) {
+       $('#who-ball-p2').html('<h1> ' + namep2 + ' is serving</h1>');
        $('#who-ball-p2').show();
        $('#who-ball-p1').hide();
-     } else if (((Math.floor((p1 + p2) / 5)) % 2) == 0 || p2 == winningScore - 1) {
+     } else if ((p2 == winningScore - 1 && p2!=p1 && p1 != winningScore - 1 & p2>p1) || (p2 >= winningScore - 1 && p2>p1)) {
+       $('#who-ball-p1').html('<h1> ' + namep1 + ' is serving</h1>');
+       $('#who-ball-p1').show();
+       $('#who-ball-p2').hide();
+     } else if (((Math.floor((p1 + p2) / 5)) % 2) == 1 && p1 < winningScore - 1 && p2 < winningScore - 1) {
+       $('#who-ball-p2').html('<h1> ' + namep2 + ' is serving</h1>');
+       $('#who-ball-p2').show();
+       $('#who-ball-p1').hide();
+     } else if (((Math.floor((p1 + p2) / 5)) % 2) == 0 && p1 < winningScore - 1 && p2 < winningScore - 1) {
+       $('#who-ball-p1').html('<h1> ' + namep1 + ' is serving</h1>');
        $('#who-ball-p1').show();
        $('#who-ball-p2').hide();
      }
