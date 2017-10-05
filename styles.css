@@ -1,0 +1,45 @@
+body{
+  background-color: #F82F87 !important;
+}
+
+h1{
+  font-family: 'Fjalla One', sans-serif !important;
+  color: #00DEE8 !important;
+}
+
+.score-up{
+  color: #00ff2e;
+}
+
+.score-down{
+  color: #ffe100;
+}
+
+.score-change {
+  background: none !important;
+  border: 2px solid !important;
+  line-height: 1 !important;
+  padding: 1em 2em !important;
+}
+
+.score-change{
+  margin-top: 18px;
+}
+
+.score-change:focus{
+  -webkit-animation: pluse 1s;
+          animation: pluse 1s;
+  box-shadow: 0 0 0 2em rgba(68,157,68,0);
+}
+
+@-webkit-keyframes pluse {
+  0% {
+    box-shadow: 0 0 0 0 #449D44;
+  }
+}
+
+@keyframes pluse {
+  0% {
+    box-shadow: 0 0 0 0 #449D44;
+  }
+}
