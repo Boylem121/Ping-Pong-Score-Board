@@ -12,7 +12,8 @@
      namep1 = $('#input-name-p1').val();
       $('#place-name-p1').html('<h1 class="col-sm-5 col-xs-12 text-center">' + namep1 + '</h1>');
       namep2 = $('#input-name-p2').val();
-       $('#place-name-p2').html('<h1 class="col-sm-5 col-xs-12 text-center">' + namep2 + '</h1>');
+       $('#place-name-p2').html('<h2 class="col-sm-5 col-xs-12 text-center">' + namep2 + '</h2>');
+       $('#place-name-p2-small').html('<h3 class="col-sm-5 col-xs-12 text-center">' + namep2 + '</h3>');
        $('img').show();
        $('button').show();
        $('h1').show();
